@@ -41,8 +41,7 @@ const config = {
     },
     resolve: {
         alias: {
-            config: path.join(__dirname, 'assets/js/config.js'),
-            'vue$': 'vue/dist/vue.common.js'
+            config: path.join(__dirname, 'assets/js/config.js')
         }
     }
 };
