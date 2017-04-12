@@ -7,7 +7,7 @@ export default function(state = defaultState, action) {
         SET_TITLES: function(titles) {
             state.titles = titles;
 
-            return titles;
+            return state;
         },
         ADD_TITLES: function(titles) {
             return state.concat(titles);

@@ -1,19 +1,40 @@
 'use strict';
 
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default class Words extends React.Component {
+import fetchTitles from '../js/store/actions/fetchTitles.js';
+
+class Words extends React.Component {
     constructor(props) {
         super(props);
 
         this.refresh = this.refresh.bind(this);
+
+        this.state = {
+            fetching: false
+        };
     }
 
     refresh(event) {
-        console.log('pseudo refreshing');
+        this.state.fetching = true;
+        this.setState(this.state);
+
+        this.props.dispatch(fetchTitles()).then(result => {
+            this.state.fetching = false;
+            this.setState(this.state);
+        });
     }
 
     render() {
+        let refresh;
+
+        if(this.state.fetching) {
+            refresh = <span>fetching...</span>
+        } else {
+            refresh = <button onClick={this.refresh}>Refresh</button>;
+        };
+
         return (
             <div>
                 Top 10 word occurrences from
@@ -23,8 +44,16 @@ export default class Words extends React.Component {
                     <option>last 60 stories from 10k karma users</option>
                 </select>
 
-                <button onClick={this.refresh}>Refresh</button>
+                {refresh}
             </div>
         );
     }
 };
+
+const select = function(state) {
+    return {
+        titles: state.titles
+    };
+};
+
+export default connect(select)(Words);
