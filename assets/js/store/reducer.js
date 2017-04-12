@@ -5,17 +5,17 @@ import defaultState from './state.js';
 export default function(state = defaultState, action) {
     const handlers = {
         SET_TITLES: function(titles) {
-            state.titles = titles;
-
-            return state;
+            return Object.assign({}, state, {titles});
         },
         ADD_TITLES: function(titles) {
-            return state.concat(titles);
+            return Object.assign({}, state, {
+                titles: state.titles.concat(titles)
+            });
         },
         CLEAR_TITLES: function() {
-            state.titles = [];
-
-            return state;
+            return Object.assign({}, state, {
+                titles: []
+            });
         }
     };
 

@@ -11097,17 +11097,17 @@ exports.default = function () {
 
     var handlers = {
         SET_TITLES: function SET_TITLES(titles) {
-            state.titles = titles;
-
-            return state;
+            return Object.assign({}, state, { titles: titles });
         },
         ADD_TITLES: function ADD_TITLES(titles) {
-            return state.concat(titles);
+            return Object.assign({}, state, {
+                titles: state.titles.concat(titles)
+            });
         },
         CLEAR_TITLES: function CLEAR_TITLES() {
-            state.titles = [];
-
-            return state;
+            return Object.assign({}, state, {
+                titles: []
+            });
         }
     };
 
