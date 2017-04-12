@@ -1,6 +1,6 @@
 {
   "name": "hnwords",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HackerNews titles word counter",
   "main": "app.js",
   "scripts": {
