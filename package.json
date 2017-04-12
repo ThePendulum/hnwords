@@ -4,7 +4,8 @@
   "description": "HackerNews titles word counter",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch-webpack": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,19 @@
   "bugs": {
     "url": "https://github.com/ThePendulum/hnwords/issues"
   },
-  "homepage": "https://github.com/ThePendulum/hnwords#readme"
+  "homepage": "https://github.com/ThePendulum/hnwords#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "babel-preset-stage-3": "^6.24.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "webpack": "^2.3.3"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4"
+  }
 }
