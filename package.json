@@ -1,0 +1,27 @@
+{
+  "name": "hnwords",
+  "version": "1.0.0",
+  "description": "HackerNews titles word counter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePendulum/hnwords.git"
+  },
+  "keywords": [
+    "hackernews",
+    "titles",
+    "words",
+    "count",
+    "counter",
+    "occurrences"
+  ],
+  "author": "Niels Simenon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThePendulum/hnwords/issues"
+  },
+  "homepage": "https://github.com/ThePendulum/hnwords#readme"
+}
