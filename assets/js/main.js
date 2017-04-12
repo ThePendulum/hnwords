@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 import actions from './store/actions';
 import reducer from './store/reducer.js';
 
-const store = createStore(reducer, {}, compose(applyMiddleware(thunk)));
+const store = createStore(reducer, compose(applyMiddleware(thunk)));
 
 import Words from '../components/words.js';
 

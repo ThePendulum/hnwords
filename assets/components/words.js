@@ -3,6 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import count from '../js/count.js';
 import fetchTitles from '../js/store/actions/fetchTitles.js';
 
 class Words extends React.Component {
@@ -45,6 +46,12 @@ class Words extends React.Component {
                 </select>
 
                 {refresh}
+
+                <h2>Top 10</h2>
+                <ul>{count(this.props.titles.join(' ')).slice(0, 10).map((word, index) => <li key={index}>{word}</li>)}</ul>
+
+                <h2>Titles</h2>
+                <ul>{this.props.titles.map((title, index) => <li key={index}>{title}</li>)}</ul>
             </div>
         );
     }

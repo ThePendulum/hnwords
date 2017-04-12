@@ -10958,6 +10958,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(100);
 
+var _count = __webpack_require__(237);
+
+var _count2 = _interopRequireDefault(_count);
+
 var _fetchTitles = __webpack_require__(104);
 
 var _fetchTitles2 = _interopRequireDefault(_fetchTitles);
@@ -11041,7 +11045,39 @@ var Words = function (_React$Component) {
                         'last 60 stories from 10k karma users'
                     )
                 ),
-                refresh
+                refresh,
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Top 10'
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    (0, _count2.default)(this.props.titles.join(' ')).slice(0, 10).map(function (word, index) {
+                        return _react2.default.createElement(
+                            'li',
+                            { key: index },
+                            word
+                        );
+                    })
+                ),
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Titles'
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    this.props.titles.map(function (title, index) {
+                        return _react2.default.createElement(
+                            'li',
+                            { key: index },
+                            title
+                        );
+                    })
+                )
             );
         }
     }]);
@@ -11244,7 +11280,7 @@ var _words2 = _interopRequireDefault(_words);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_reducer2.default, {}, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default)));
+var store = (0, _redux.createStore)(_reducer2.default, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default)));
 
 _reactDom2.default.render(_react2.default.createElement(
     _reactRedux.Provider,
@@ -11269,22 +11305,26 @@ exports.default = function () {
     return function (dispatch, getState) {
         dispatch({
             type: 'SET_TITLES',
-            payload: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'Aliquam vehicula malesuada commodo', 'hellsellus sed est eget velit congue tincidunto', 'Ent finibus ante a aliquam vulputate']
+            payload: _mockTitles2.default
         });
 
-        return fetch(_config2.default.api.url + '/topstories.json').then(function (res) {
-            return res.json();
-        }).then(function (body) {
+        /*
+        return fetch(config.api.url + '/topstories.json').then(res => res.json()).then(body => {
             console.log(body);
-        }).catch(function (error) {
+        }).catch(error => {
             console.log(error);
         });
+        */
     };
 };
 
 var _config = __webpack_require__(102);
 
 var _config2 = _interopRequireDefault(_config);
+
+var _mockTitles = __webpack_require__(236);
+
+var _mockTitles2 = _interopRequireDefault(_mockTitles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24598,6 +24638,58 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = ['Hurry!', 'They got there early, and they got really good seats.', 'She did her best to help him.', 'The old apple revels in its authority.', 'If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?', 'She always speaks to him in a loud voice.', 'The sky is clear; the stars are twinkling.', 'We have a lot of rain in June.', 'There were white out conditions in the town; subsequently, the roads were impassable.', 'Two seats were vacant.', 'I am counting my calories, yet I really want dessert.', 'She only paints with bold colors; she does not like pastels.', 'She folded her handkerchief neatly.', 'She works two jobs to make ends meet; at least, that was her reason for not having time to join us.', 'I currently have 4 windows open up… and I don’t know why.', 'There was no ice cream in the freezer, nor did they have money to go to the store.', 'Check back tomorrow; I will see if the book has arrived.', 'This is the last random sentence I will be writing and I am going to stop mid-sent', 'Where do random thoughts come from?', 'The book is in front of the table.', 'Everyone was busy, so I went to the movie alone.', 'Malls are great places to shop; I can find everything I need under one roof.', 'Mary plays the piano.', 'Abstraction is often one floor above you.', 'If Purple People Eaters are real… where do they find purple people to eat?', 'She advised him to come back at once.', 'How was the math test?', 'Last Friday in three week’s time I saw a spotted striped blue worm shake hands with a legless lizard.', 'The memory we used to share is no longer coherent.', 'If I don’t like something, I’ll stay away from it.', 'Italy is my favorite country; in fact, I plan to spend two weeks there next year.', 'Wow, does that work?', 'I think I will buy the red car, or I will lease the blue one.', 'I want to buy a onesie… but know it won’t suit me.', 'Sometimes, all you need to do is completely make an ass of yourself and laugh it off to realise that life isn’t so bad after all.', 'Christmas is coming.', 'Is it free?', 'Joe made the sugar cookies; Susan decorated them.', 'I would have gotten the promotion, but my attendance wasn’t good enough.', 'The quick brown fox jumps over the lazy dog.', 'She did not cheat on the test, for it was not the right thing to do.', 'I am happy to take your donation; any amount will be greatly appreciated.', 'The clock within this blog and the clock on my laptop are 1 hour different from each other.', 'I hear that Nancy is very pretty.', 'Wednesday is hump day, but has anyone asked the camel if he’s happy about it?', 'I checked to make sure that he was still alive.', 'I\'d rather be a bird than a fish.', 'She borrowed the book from him many years ago and hasn\'t yet returned it.', 'My Mum tries to be cool by saying that she likes all the same things that I do.', 'This is a Japanese doll.', 'Lets all be unique together until we realise we are all the same.', 'The shooter says goodbye to his love.', 'Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn. It didn’t and they don’t recommend anyone else do it either.', 'I really want to go to work, but I am too sick to drive.', 'He didn’t want to go to the dentist, yet he went anyway.', 'What was the person thinking when they discovered cow’s milk was fine for human consumption… and why did they do it in the first place!?', 'Rock music approaches at high velocity.', 'I often see the time 11:11 or 12:34 on clocks.', 'The body may perhaps compensates for the loss of a true metaphysics.', 'He turned in the research paper on Friday; otherwise, he would have not passed the class.', 'It was getting dark, and we weren’t there yet.', 'A purple pig and a green donkey flew a kite in the middle of the night and ended up sunburnt.', 'A song can make or ruin a person’s day if they let it get to them.', 'We have never been to Asia, nor have we visited Africa.', 'She wrote him a long letter, but he didn\'t read it.', 'A glittering gem is not enough.', 'If you like tuna and tomato sauce- try combining the two. It’s really not as bad as it sounds.', 'Please wait outside of the house.', 'Let me help you with your baggage.', 'I was very proud of my nickname throughout high school but today- I couldn’t be any different to what my nickname was.', 'The lake is a long way from here.', 'Should we start class now, or should we wait for everyone to get here?', 'I will never be this young again. Ever. Oh damn… I just got older.', 'The mysterious diary records the voice.', 'I am never at home on Sundays.', 'The stranger officiates the meal.', 'Sixty-Four comes asking for bread.', 'Yeah, I think it\'s a good environment for learning English.', 'I love eating toasted cheese and tuna sandwiches.', 'Sometimes it is better to just walk away from things and go back to them later when you’re in a better frame of mind.', 'The waves were crashing on the shore; it was a lovely sight.', 'Don\'t step on the broken glass.', 'Tom got a small piece of pie.', 'Cats are good pets, for they are clean and are not noisy.', 'I want more detailed information.', 'We need to rent a room for our party.', 'He told us a very exciting adventure story.', 'He ran out of money, so he had to stop playing poker.', 'The river stole the gods.', 'He said he was not there yesterday; however, many people saw him there.', 'Writing a list of random sentences is harder than I initially thought it would be.', 'She was too short to see over the fence.', 'When I was little I had a car door slammed shut on my hand. I still remember it quite vividly.'];
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (text) {
+    var words = text.split(' ');
+
+    var counts = words.reduce(function (acc, word) {
+        acc[word] = acc[word] ? acc[word] + 1 : 1;
+
+        return acc;
+    }, {});
+
+    return Object.keys(counts).sort(function (wordA, wordB) {
+        if (counts[wordA] < counts[wordB]) {
+            return 1;
+        }
+
+        if (counts[wordA] > counts[wordB]) {
+            return -1;
+        }
+
+        return 0;
+    });
+};
+
+;
 
 /***/ })
 /******/ ]);
